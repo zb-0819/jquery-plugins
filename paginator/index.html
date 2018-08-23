@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 分页</title>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		text-decoration: none;
+	}
+	#paginator {
+		padding: 15px;
+	}
+	
+	#paginator .paginator-list {
+		display: inline-block;
+		border: 1px solid #EEE;
+		border-radius: 4px;
+	}
+	#paginator span,
+	#paginator a {
+		display: inline-block;
+		padding: 8px 16px;
+		color: #35A4F7;
+		cursor: pointer;
+		border-right: 1px solid #EEE;
+	}
+	#paginator .paginator-list a:last-child,
+	#paginator .paginator-list span:last-child {
+		border-right: none;
+	}
+	#paginator span.active, 
+	#paginator a.active {
+		background: #35A4F7;
+		color: #FFF;
+	}
+</style>
+<script src="../libs/jquery.min.js"></script>
+<script src="./jquery.paginator.js"></script>
+<body>
+	<div id="paginator"></div>
+	
+	<script>
+		$('#paginator').pagination({
+			prevIcon: '上一页',
+			nextIcon: '下一页',
+			homePage: '首页',
+			endPage: '尾页',
+			shouldShowPage: true,
+			totalPages: 6,
+			callback: function(that) {
+				console.log(that._getCurrentPage());
+				// _setTotalPages 设置总页数
+				// _getTotalPages 获取总页数
+				// _getCurrentPage 获取当前页 
+
+			}
+		});
+	</script>
+</body>
+</html>

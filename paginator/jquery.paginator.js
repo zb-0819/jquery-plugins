@@ -95,6 +95,7 @@
 			var html = '';
 			currentPage = index || opts.currentPage; //当前页码
 			var totalPages = this._getTotalPages(); //获取的总页数
+			html += '<div class="paginator-list">';
 			if(opts.keepDisplay || currentPage > 1){
 				//上一页
 				html += '<a href="javascript:;" class="'+opts.prevClass+'">'+opts.prevIcon+'</a>';
@@ -113,6 +114,7 @@
 			// 开始所在页码
 			var start = '';
 			// 忽略start为负数
+			// 根据当前页码动态显示分页结构
 			start = currentPage === totalPages ? currentPage - opts.count - 2 : currentPage - opts.count;
 			((start > 1 && currentPage < opts.count) || currentPage == 1) && end++;
 			(currentPage > totalPages - opts.count && currentPage >= totalPages) && start++;
@@ -139,6 +141,7 @@
 				}
 			}
 			html += opts.jump ? '<input type="text" class="'+opts.jumpInpClass+'"><a href="javascript:;" class="'+opts.jumpBtnClass+'">'+opts.jumpBtn+'</a>' : '';
+			html += '</div>';
 			$obj.empty().html(html);
 		};
 
