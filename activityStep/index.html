@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>活动步骤</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<script src="../libs/jquery.min.js"></script>
+<script src="./jquery.activitystep.js"></script>
+<body>
+	
+	<div class="step-wrap"></div>
+
+	<script>
+		var options = {
+			stepObj: [
+				{ id: 1, name: '设置活动信息' },
+				{ id: 2, name: '选择宝贝' },
+				{ id: 3, name: '设置优惠' },
+				{ id: 4, name: '创建完成' }
+			]
+		} 
+
+		$('.step-wrap').activityStep(options);
+	</script>
+</body>
+</html>
