@@ -46,7 +46,7 @@
 	<div id="paginator"></div>
 	
 	<script>
-		$('#paginator').pagination({
+		var paginator = $('#paginator').pagination({
 			prevIcon: '上一页',
 			nextIcon: '下一页',
 			homePage: '首页',
@@ -61,6 +61,7 @@
 
 			}
 		});
+		console.log(paginator);
 	</script>
 </body>
 </html>

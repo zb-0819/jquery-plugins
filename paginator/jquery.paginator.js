@@ -68,6 +68,9 @@
 		 * @return opts.totalPages 总页数配置
 		 */
 		this._setTotalPages = function(page){
+			if(page > opts.totalPages || page < 1) {
+				throw "Page out of range";
+			}
 			return opts.totalPages = page;
 		};
 
