@@ -52,3 +52,17 @@ a {
 .step-panel .step-item.active .line {
     background-color: #2d94e4;
 }
+
+.btn-group {
+    margin: 15px;
+    text-align: center;
+}
+.btn-group span {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 6px 10px;
+    background: #2d94e4;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #FFF;
+}

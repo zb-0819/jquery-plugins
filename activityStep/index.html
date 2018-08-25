@@ -10,6 +10,10 @@
 <body>
 	
 	<div class="step-wrap"></div>
+	<div class="btn-group">
+		<span class="prev">上一步</span>
+		<span class="next">下一步</span>
+	</div>
 
 	<script>
 		var options = {
@@ -18,10 +22,27 @@
 				{ id: 2, name: '选择宝贝' },
 				{ id: 3, name: '设置优惠' },
 				{ id: 4, name: '创建完成' }
-			]
-		} 
+			],
+			stepIndex: 0,
+		}
 
 		$('.step-wrap').activityStep(options);
+
+		var index = 0;
+		$('.prev').on('click', function() {
+			index --;
+			if(index <= 0) {
+				index = 0;
+			}
+			$('.step-wrap').activityStep('_setOptions', {stepIndex: index});
+		});
+		$('.next').on('click', function() {
+			index ++;
+			if(index >= 3) {
+				index = 3;
+			}
+			$('.step-wrap').activityStep('_setOptions', {stepIndex: index});
+		});
 	</script>
 </body>
 </html>
